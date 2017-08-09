@@ -11,4 +11,3 @@ logs the current temperature read by the enviro phat to a local influxdb.
 * `python3-envirophat`
 * `python3-influxdb`
 * a local influxdb instance
-*
