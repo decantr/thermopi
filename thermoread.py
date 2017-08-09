@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 import time
-import sys
-import datetime
-from influxdb import InfluxDBClient
 import envirohat
+from influxdb import InfluxDBClient
 
 # create the db client
 client = InfluxDBClient("localhost", "8086", "root", "root", "templog")
