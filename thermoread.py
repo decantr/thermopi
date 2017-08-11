@@ -4,7 +4,7 @@ from envirophat import weather
 from influxdb import InfluxDBClient
 
 # create the db client
-client = InfluxDBClient("localhost", "8086", "root", "root", "templog")
+client = InfluxDBClient("localhost", 8086, "root", "root", "templog")
 
 while True:
     # build the json to send to db
