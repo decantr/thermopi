@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 pid=$(pgrep thermoread.py)
 
-if (-z $pid); then
-	$(/bin/bash /home/r2sadmin/thermoread.py)
+if [ -z $pid ]; then
+	$(/usr/bin/python3 thermoread)
+fi
