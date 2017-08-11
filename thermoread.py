@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 import time
-from envirophat import weather
+import psutil
+#from envirophat import weather
 from influxdb import InfluxDBClient
 
 # create the db client
-client = InfluxDBClient("localhost", 8086, "root", "root", "templog")
+db = InfluxDBClient("localhost", 8086, "root", "root", "templog")
 
 while True:
     # build the json to send to db
-    json_body = [{
+    msg = [{
 		"measurement": "temperature",
         "fields": {
-            "value" : weather.temperature()
+			"value": psutil.cpu_percent()
+			# value" : weather.temperature()
     }}]
     # write to db
-    client.write_points(json_body)
+    db.write_points(msg)
     # wait before next data point
     time.sleep(1)
