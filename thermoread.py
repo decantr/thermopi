@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import time
-import envirohat
+from envirophat import weather
 from influxdb import InfluxDBClient
 
 # create the db client
