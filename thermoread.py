@@ -9,8 +9,9 @@ client = InfluxDBClient("localhost", 8086, "root", "root", "templog")
 while True:
     # build the json to send to db
     json_body = [{
+		"measurement": "temperature",
         "fields": {
-            "temperature" : envirohat.weather.temperature()
+            "value" : weather.temperature()
     }}]
     # write to db
     client.write_points(json_body)
