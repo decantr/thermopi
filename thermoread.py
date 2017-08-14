@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 import time
 import psutil
 #from envirophat import weather
 from influxdb import InfluxDBClient
 
 # create the db client
-db = InfluxDBClient("localhost", 8086, "root", "root", "templog")
+db = InfluxDBClient("localhost", 8086, "root", "root", "test")
 
 while True:
     # build the json to send to db
