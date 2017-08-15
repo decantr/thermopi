@@ -3,6 +3,10 @@ import time
 import psutil
 #from envirophat import weather
 from influxdb import InfluxDBClient
+from tendo import singleton
+
+# make sure there is no other process running
+i = singleton.SingleInstance()
 
 # create the db client
 db = InfluxDBClient(host='localhost', database='test')
