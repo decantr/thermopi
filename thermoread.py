@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 from time import sleep
-from psutil import cpu_percent
-#from envirophat import weather
 from influxdb import InfluxDBClient
 from tendo import singleton
 
@@ -16,8 +14,7 @@ while True:
     msg = [{
 		'measurement': 'temperature',
         'fields': {
-			'value': cpu_percent()
-			# 'value' : weather.temperature()
+			'value' : weather.temperature()
     }}]
     # write to db
     db.write_points(msg)
