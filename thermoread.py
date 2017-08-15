@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import time
-import psutil
+from time import sleep
+from psutil import cpu_percent
 #from envirophat import weather
 from influxdb import InfluxDBClient
 from tendo import singleton
@@ -16,10 +16,10 @@ while True:
     msg = [{
 		'measurement': 'temperature',
         'fields': {
-			'value': psutil.cpu_percent()
+			'value': cpu_percent()
 			# 'value' : weather.temperature()
     }}]
     # write to db
     db.write_points(msg)
     # wait before next data point
-    time.sleep(1)
+    sleep(1)
