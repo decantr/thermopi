@@ -13,4 +13,3 @@ msg = [{
 }}]
 # write to db
 db.write_points(msg)
-# wait before next data point
